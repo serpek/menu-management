@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/client",
+            "outputPath": "public",
             "index": "client/src/index.html",
             "main": "client/src/main.ts",
             "polyfills": "client/src/polyfills.ts",
@@ -28,6 +28,9 @@
               "client/src/assets"
             ],
             "styles": [
+              {
+                "input": "node_modules/@progress/kendo-theme-default/dist/all.css"
+              },
               "client/src/styles.scss"
             ],
             "scripts": []
@@ -37,7 +40,7 @@
               "fileReplacements": [
                 {
                   "replace": "client/src/environments/environment.ts",
-                  "with": "client//environments/environment.prod.ts"
+                  "with": "client/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -45,6 +48,7 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
+              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -60,6 +64,9 @@
                   "maximumError": "10kb"
                 }
               ]
+            },
+            "ci": {
+              "progress": false
             }
           }
         },
@@ -72,14 +79,15 @@
           "configurations": {
             "production": {
               "browserTarget": "client:build:production"
+            },
+            "ci": {
+              "progress": false
             }
           }
         },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "client:build"
-          }
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
     }

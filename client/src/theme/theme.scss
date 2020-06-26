@@ -1,0 +1,17 @@
+/*
+ * Global application theme.
+ * Framework overrides and customization goes here.
+ */
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i&display=swap');
+
+html {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "RobotoRegular", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  margin: 0;
+}
