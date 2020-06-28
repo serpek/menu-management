@@ -37,7 +37,7 @@
       "useTransformOptionsMethod": false,
       "useTransformResultMethod": false,
       "generateDtoTypes": true,
-      "operationGenerationMode": "MultipleClientsFromOperationId",
+      "operationGenerationMode": "SingleClientFromOperationId",
       "markOptionalProperties": true,
       "generateCloneMethod": false,
       "typeStyle": "Class",
@@ -59,9 +59,8 @@
       "typeNameGeneratorType": null,
       "propertyNameGeneratorType": null,
       "enumNameGeneratorType": null,
-      "serviceHost": "http://localhost:3000",
       "serviceSchemes": null,
-      "output": "client/src/app/@core/services/api.service.ts"
+      "output": "apps/client/src/app/@core/services/api.service.ts"
     }
   }
 }

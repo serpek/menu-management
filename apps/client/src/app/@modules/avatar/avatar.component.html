@@ -1,0 +1,12 @@
+<div class="list" *ngIf="contacts">
+  <div class="contact-list">Contacts</div>
+  <div class="contact" *ngFor="let contact of contacts">
+    <div class="k-hbox">
+      <kendo-avatar [shape]="'circle'" [imageSrc]="contact.avatar"></kendo-avatar>
+      <div>
+        <h2>{{ contact.name }}</h2>
+        <p>{{ contact.position }}</p>
+      </div>
+    </div>
+  </div>
+</div>

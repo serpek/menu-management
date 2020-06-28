@@ -1,16 +1,16 @@
 import {InMemoryDBEntity} from '@nestjs-addons/in-memory-db';
-import {ApiModelProperty} from "@nestjs/swagger/dist/decorators/api-model-property.decorator";
+import {ApiProperty} from "@nestjs/swagger";
 
 export class MenuEntity implements InMemoryDBEntity {
-  @ApiModelProperty()
+  @ApiProperty()
   id: number;
 
-  @ApiModelProperty()
+  @ApiProperty()
   title: string;
 
-  @ApiModelProperty()
+  @ApiProperty()
   module: string;
 
-  @ApiModelProperty()
+  @ApiProperty()
   icon: string;
 }

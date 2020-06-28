@@ -3,7 +3,6 @@ import {InMemoryDBService} from "@nestjs-addons/in-memory-db";
 import {ApiOperation, ApiResponse, ApiTags} from "@nestjs/swagger";
 import {MenuEntity} from "./menu.entity";
 import {ApiImplicitParam} from "@nestjs/swagger/dist/decorators/api-implicit-param.decorator";
-import {ResponsesObject} from "@nestjs/swagger/dist/interfaces/open-api-spec.interface";
 import {ApiImplicitBody} from "@nestjs/swagger/dist/decorators/api-implicit-body.decorator";
 
 @ApiTags('menu')
@@ -16,7 +15,7 @@ export class MenuManagerController {
   }
 
   @Get()
-  @ApiOperation({responses: <ResponsesObject>{}, tags: ['all-menu']})
+  @ApiOperation({operationId: 'getAllMenu'})
   @ApiResponse({
     isArray: true,
     status: HttpStatus.OK,
@@ -27,7 +26,22 @@ export class MenuManagerController {
     return this.menuService.getAll();
   }
 
+  @Get('seed')
+  @ApiOperation({operationId: 'seedMenu'})
+  @ApiResponse({
+    isArray: true,
+    status: HttpStatus.OK,
+    type: MenuEntity,
+    description: ''
+  })
+  seedMenu() {
+    const recordFactory = (idx: number): Partial<MenuEntity> => ({id: idx, title: `Menu ${idx}`, module: `module ${idx}`, icon: 'k-i-user'});
+    this.menuService.seed(recordFactory, 10);
+    return this.menuService.getAll();
+  }
+
   @Post()
+  @ApiOperation({operationId: 'createMenu'})
   @ApiResponse({
     status: HttpStatus.CREATED,
     type: MenuEntity,
@@ -39,6 +53,7 @@ export class MenuManagerController {
   }
 
   @Post('/many')
+  @ApiOperation({operationId: 'createManyMenu'})
   @ApiResponse({
     status: HttpStatus.CREATED,
     type: MenuEntity,
@@ -52,6 +67,7 @@ export class MenuManagerController {
   }
 
   @Put()
+  @ApiOperation({operationId: 'updateMenu'})
   @ApiResponse({
     status: HttpStatus.OK,
     type: Boolean,
@@ -69,6 +85,7 @@ export class MenuManagerController {
   }
 
   @Delete(':id')
+  @ApiOperation({operationId: 'deleteMenu'})
   @ApiResponse({
     status: HttpStatus.OK,
     type: Boolean,
@@ -87,12 +104,12 @@ export class MenuManagerController {
   }
 
   @Get(':id')
+  @ApiOperation({operationId: 'getMenuById'})
   @ApiImplicitParam({name: 'id', type: Number})
   @ApiResponse({
     status: HttpStatus.OK,
     type: MenuEntity,
     description: 'Menu id param query response',
-    links: null,
     isArray: true
   })
   async getMenuById(@Param('id') id: number): Promise<MenuEntity[]> {
