@@ -7,9 +7,9 @@ import {Component} from '@angular/core';
 })
 export class PanelBarComponent {
 
-  private baseImageUrl = 'https://demos.telerik.com/kendo-ui/content/web/panelbar/';
+  baseImageUrl = 'https://demos.telerik.com/kendo-ui/content/web/panelbar/';
 
-  imageUrl(imageName: string) {
+  public imageUrl(imageName: string) {
     return this.baseImageUrl + imageName + '.jpg';
   }
 }
