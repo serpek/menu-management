@@ -1,1 +1,5 @@
-<p>card works!</p>
+<div class="card-list">
+  <div *ngFor="let card of scrollViewCards">
+    <scrollview-card [card]="card"></scrollview-card>
+  </div>
+</div>

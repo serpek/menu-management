@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-panel-bar',
   templateUrl: './panel-bar.component.html',
   styleUrls: ['./panel-bar.component.scss']
 })
-export class PanelBarComponent implements OnInit {
+export class PanelBarComponent {
 
-  constructor() { }
+  private baseImageUrl = 'https://demos.telerik.com/kendo-ui/content/web/panelbar/';
 
-  ngOnInit() {
+  constructor() {
+  }
+
+  private imageUrl(imageName: string) {
+    return this.baseImageUrl + imageName + '.jpg';
   }
 
 }

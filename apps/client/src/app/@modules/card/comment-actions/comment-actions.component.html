@@ -1,0 +1,10 @@
+<div>
+  <button class="k-button k-flat" (click)="postLikesCount(card)">
+    <span [ngClass]="postHeartIcon(card)"></span>
+  </button>
+  <button class="k-button k-flat" (click)="commentClick(card)">
+    <span class="k-icon k-i-comment"></span>
+  </button>
+  <button class="k-button k-flat"><span class="k-icon k-i-share"></span></button>
+</div>
+<span class="post-likes-count">{{ card.postLikes }} likes</span>
