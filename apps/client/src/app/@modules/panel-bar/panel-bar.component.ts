@@ -9,11 +9,7 @@ export class PanelBarComponent {
 
   private baseImageUrl = 'https://demos.telerik.com/kendo-ui/content/web/panelbar/';
 
-  constructor() {
-  }
-
-  private imageUrl(imageName: string) {
+  imageUrl(imageName: string) {
     return this.baseImageUrl + imageName + '.jpg';
   }
-
 }

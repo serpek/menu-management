@@ -2,7 +2,7 @@
   "collection": "@nestjs/schematics",
   "sourceRoot": "apps/server/src",
   "monorepo": true,
-  "root": "apps/server",
+  "root": "server",
   "compilerOptions": {
     "plugins": ["@nestjs/swagger/plugin"],
     "webpack": true,
