@@ -1,7 +1,8 @@
 module.exports = {
-  apps : [{
+  apps: [{
     name: "server",
     script: "./dist/apps/server/main.js",
+    watch: true,
     env: {
       NODE_ENV: "development",
     },
@@ -14,4 +15,4 @@ module.exports = {
     instances  : 4,
     exec_mode  : "cluster"
   }*/]
-}
+};
