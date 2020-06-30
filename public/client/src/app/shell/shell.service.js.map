@@ -1,0 +1,1 @@
+{"version":3,"file":"shell.service.js","sourceRoot":"","sources":["../../../../../apps/client/src/app/shell/shell.service.ts"],"names":[],"mappings":";;AAEA,uDAAmD;AAEnD,MAAa,KAAK;IAChB,MAAM,CAAC,WAAW,CAAC,MAAc;QAC/B,OAAO;YACL,IAAI,EAAE,EAAE;YACR,SAAS,EAAE,gCAAc;YACzB,QAAQ,EAAE,MAAM;YAChB,IAAI,EAAE,EAAE,KAAK,EAAE,IAAI,EAAE;SACtB,CAAC;IACJ,CAAC;CACF;AATD,sBASC"}

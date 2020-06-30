@@ -1,0 +1,1 @@
+{"version":3,"file":"environment.prod.js","sourceRoot":"","sources":["../../../../apps/client/src/environments/environment.prod.ts"],"names":[],"mappings":";;AAAA,iCAA2B;AAEd,QAAA,WAAW,GAAG;IACzB,UAAU,EAAE,IAAI;IAChB,SAAS,EAAE,GAAG;IACd,OAAO,EAAE,UAAG,CAAC,mBAAmB;CACjC,CAAC"}

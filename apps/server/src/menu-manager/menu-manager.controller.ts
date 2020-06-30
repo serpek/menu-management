@@ -1,9 +1,7 @@
 import {Body, Controller, Delete, Get, HttpStatus, Param, Post, Put} from '@nestjs/common';
 import {InMemoryDBService} from "@nestjs-addons/in-memory-db";
-import {ApiOperation, ApiResponse, ApiTags} from "@nestjs/swagger";
+import {ApiOperation, ApiResponse, ApiTags, ApiParam, ApiBody} from "@nestjs/swagger";
 import {MenuEntity} from "./menu.entity";
-import {ApiImplicitParam} from "@nestjs/swagger/dist/decorators/api-implicit-param.decorator";
-import {ApiImplicitBody} from "@nestjs/swagger/dist/decorators/api-implicit-body.decorator";
 
 @ApiTags('menu')
 @Controller(`menu`)
@@ -60,7 +58,7 @@ export class MenuManagerController {
     description: 'Menu multiple create response',
     isArray: true
   })
-  @ApiImplicitBody({content: undefined, name: "MenuEntity", type: MenuEntity, isArray: true})
+  @ApiBody({type: MenuEntity, isArray: true})
   async createManyMenu(@Body() menu: MenuEntity[]): Promise<MenuEntity[]> {
     let createManyAsync = await this.menuService.createManyAsync(menu).toPromise();
     return Promise.resolve(createManyAsync);
@@ -93,7 +91,7 @@ export class MenuManagerController {
     links: null,
     isArray: false
   })
-  @ApiImplicitParam({name: 'id', type: Number})
+  @ApiParam({name: 'id', type: Number})
   async deleteMenu(@Param('id') id: number): Promise<boolean> {
     try {
       await this.menuService.deleteAsync(+id).toPromise();
@@ -105,7 +103,7 @@ export class MenuManagerController {
 
   @Get(':id')
   @ApiOperation({operationId: 'getMenuById'})
-  @ApiImplicitParam({name: 'id', type: Number})
+  @ApiParam({name: 'id', type: Number})
   @ApiResponse({
     status: HttpStatus.OK,
     type: MenuEntity,
