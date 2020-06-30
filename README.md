@@ -30,6 +30,19 @@ Angular dynamic module loader and web api project.
     $ npm run ng:build          /* Web application build */
 ```
 
+## Config files
+
+```bash
+angular.json        : Angular configuration file
+ecosystem.config.js : pm2 process manager configuration file
+nest-cli.json       : Nestjs node framework configuration file
+ngcc.config.js      : Angular Compatibility Compiler configuration file
+nswag.json          : Swagger service generator configuration file (https://github.com/RicoSuter/NSwag)
+package.json        : Npm package manager configuration file
+tsconfig.json       : Typescript compiler configuration file
+tsconfig.client.json: Angular project typescript compiler configuration file
+tsconfig.server.json: Nestjs project typescript compiler configuration file
+```
 
 ## Support
 
