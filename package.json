@@ -16,7 +16,7 @@
     "ng:env": "ngx-scripts env npm_package_version --out ./apps/client/src/environments/.env.ts ",
     "ng:nswag": "nswag run",
     "ng:start": "ng serve",
-    "ng:build": "ng build",
+    "ng:build": "ng build --prod",
     "ng:deploy": "npm run env -s && ng deploy"
   },
   "dependencies": {

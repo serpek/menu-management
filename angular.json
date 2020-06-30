@@ -24,7 +24,6 @@
             "main": "apps/client/src/main.ts",
             "polyfills": "apps/client/src/polyfills.ts",
             "tsConfig": "tsconfig.client.json",
-            "aot": true,
             "assets": [
               "apps/client/src/favicon.ico",
               "apps/client/src/assets"
