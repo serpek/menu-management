@@ -30,5 +30,11 @@
   "files": [
     "./apps/client/src/main.ts",
     "./apps/client/src/polyfills.ts"
-  ]
+  ],
+  "angularCompilerOptions": {
+    "enableIvy": true,
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true,
+    "preserveWhitespaces": true
+  }
 }
