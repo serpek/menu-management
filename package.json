@@ -11,7 +11,7 @@
     "nest:start": "nest start",
     "nest:start:dev": "nest start --watch",
     "nest:start:debug": "nest start --debug --watch",
-    "nest:start:prod": "node public/server",
+    "nest:start:prod": "node dist/server/main.js",
     "ng": "ng",
     "ng:env": "ngx-scripts env npm_package_version --out ./apps/client/src/environments/.env.ts ",
     "ng:nswag": "nswag run",

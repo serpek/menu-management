@@ -1,8 +1,7 @@
 module.exports = {
   apps: [{
     name: "server",
-    script: "npm",
-    args: "-- run nest:start",
+    script: "npm -- run nest:start",
     watch: true,
     env: {
       NODE_ENV: "development",

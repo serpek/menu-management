@@ -1,7 +1,8 @@
 {
-  "extends": "../../tsconfig.json",
+  "extends": "./tsconfig.json",
   "compilerOptions": {
-    "outDir": "./out-tsc/app",
+    "baseUrl": "./apps/client",
+    "outDir": "dist/client",
     "types": [],
     "target": "es2015",
     "paths": {
@@ -25,11 +26,9 @@
       ]
     }
   },
+  "include": ["apps/client/src/**/*.d.ts"],
   "files": [
-    "./src/main.ts",
-    "./src/polyfills.ts"
-  ],
-  "include": [
-    "src/**/*.d.ts"
+    "./apps/client/src/main.ts",
+    "./apps/client/src/polyfills.ts"
   ]
 }

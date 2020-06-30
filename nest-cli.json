@@ -1,18 +1,12 @@
 {
   "collection": "@nestjs/schematics",
+  "root": "server",
   "sourceRoot": "apps/server/src",
   "monorepo": true,
+  "entryFile": "main",
   "compilerOptions": {
-    "deleteOutDir": true,
     "plugins": ["@nestjs/swagger/plugin"],
     "webpack": true,
-    "tsConfigPath": "apps/server/tsconfig.app.json"
-  },
-  "projects": {
-    "server": {
-      "type": "application",
-      "entryFile": "main",
-      "root": "./public/server"
-    }
+    "tsConfigPath": "tsconfig.server.json"
   }
 }

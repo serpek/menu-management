@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "./apps/server",
+    "outDir": "dist/server"
+  },
+  "include": ["apps/server/src/**/*"],
+  "exclude": ["dist", "test", "**/*spec.ts"]
+}
